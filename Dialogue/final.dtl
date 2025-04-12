@@ -1,0 +1,9 @@
+[signal arg="Clear"]
+CONGRATULATIONS!!!!
+You have completed the tutorial! 
+You can come back here at any time and replay any of the tutorial levels.
+You will now be sent back to the home screen. 
+You have unlocked the first challenge level! 
+Click the challenges button on the home screen and try level 1!
+Good luck! And happy farming!
+[signal arg="tutorial_finished"]

@@ -1,0 +1,5 @@
+You need my help?
+Sure! Here's a hint
+You need to break all the rocks highlighted in yellow!
+Use break_rock(x, y) and is_rock(x, y) to find a break them.
+[signal arg="finished"]

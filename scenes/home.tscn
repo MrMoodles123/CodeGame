@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=3 uid="uid://boiyajmdf4ogs"]
+
+[ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_5l11w"]
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_ugapg"]
+[ext_resource type="Theme" uid="uid://bfn6c6vx2cakq" path="res://Themes/GUI_THEME.tres" id="3_05tvr"]
+[ext_resource type="Script" path="res://scripts/logo.gd" id="4_6gx7g"]
+[ext_resource type="SpriteFrames" uid="uid://m2kc81ahmo8c" path="res://scenes/home_screen_animation.tres" id="4_q04ni"]
+[ext_resource type="PackedScene" uid="uid://dfbulwk3w1wlt" path="res://scenes/water_bg.tscn" id="6_u4c6g"]
+[ext_resource type="TileSet" uid="uid://c72eemeeuull3" path="res://Themes/tile_set.tres" id="6_x173x"]
+[ext_resource type="Script" path="res://scripts/HomeTiles.gd" id="7_a13cq"]
+[ext_resource type="PackedScene" uid="uid://bvarefmkp5vwj" path="res://scenes/SettingsMenu.tscn" id="9_5bwm2"]
+[ext_resource type="Theme" uid="uid://buhtn3y0uoon3" path="res://Themes/ButtonTheme.tres" id="10_p8gfx"]
+[ext_resource type="Texture2D" uid="uid://d1afqt5r6w4h6" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/white icons.png" id="11_m5gfh"]
+[ext_resource type="PackedScene" uid="uid://dywt4wt7emsx" path="res://scenes/music_player.tscn" id="12_i2vd3"]
+
+[sub_resource type="Theme" id="Theme_kk03v"]
+default_font = ExtResource("1_ugapg")
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kk03v")
+script = ExtResource("1_5l11w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 203.0
+offset_right = 1085.0
+offset_bottom = 583.0
+theme_override_constants/separation = 50
+
+[node name="Tutorial" type="Button" parent="MarginContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05tvr")
+theme_override_font_sizes/font_size = 36
+text = "Tutorial
+"
+
+[node name="Challenges" type="Button" parent="MarginContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05tvr")
+theme_override_font_sizes/font_size = 36
+text = "Challenges
+"
+
+[node name="Leaderboard" type="Button" parent="MarginContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05tvr")
+theme_override_font_sizes/font_size = 36
+text = "Leaderboard
+"
+
+[node name="Profile" type="Button" parent="MarginContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05tvr")
+theme_override_font_sizes/font_size = 36
+text = "Profile"
+
+[node name="Quit" type="Button" parent="MarginContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05tvr")
+theme_override_font_sizes/font_size = 36
+text = "quit
+"
+
+[node name="Logo" type="Label" parent="MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 71.0
+offset_right = 1100.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 63
+script = ExtResource("4_6gx7g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
+visible = false
+position = Vector2(322, 369)
+scale = Vector2(9.3125, 9.09375)
+sprite_frames = ExtResource("4_q04ni")
+autoplay = "default"
+
+[node name="WaterBG" parent="." instance=ExtResource("6_u4c6g")]
+z_index = -2
+
+[node name="Farm" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource("6_x173x")
+format = 2
+layer_1/tile_data = PackedInt32Array()
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("7_a13cq")
+
+[node name="Timer" type="Timer" parent="Farm"]
+wait_time = 0.25
+one_shot = true
+
+[node name="MenuBG" parent="." instance=ExtResource("9_5bwm2")]
+visible = false
+z_index = 5
+position = Vector2(299, 353)
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 80.0
+offset_bottom = 83.0
+theme = ExtResource("10_p8gfx")
+
+[node name="Icon" type="Sprite2D" parent="SettingsButton"]
+position = Vector2(37, 33)
+scale = Vector2(3.3125, 3.3125)
+texture = ExtResource("11_m5gfh")
+hframes = 6
+vframes = 3
+frame = 3
+
+[node name="error_panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 373.0
+offset_top = 536.0
+offset_right = 757.0
+offset_bottom = 576.0
+
+[node name="Label" type="Label" parent="error_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Something went wrong. Check internet connection or try again later :("
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Request_timer" type="Timer" parent="."]
+
+[node name="MusicPlayer" parent="." instance=ExtResource("12_i2vd3")]
+
+[connection signal="pressed" from="MarginContainer/TextureRect/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/VBoxContainer/Challenges" to="." method="_on_challenges_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/VBoxContainer/Profile" to="." method="_on_profile_pressed"]
+[connection signal="pressed" from="MarginContainer/TextureRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Farm/Timer" to="Farm" method="_on_timer_timeout"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="timeout" from="Request_timer" to="." method="_on_request_timer_timeout"]

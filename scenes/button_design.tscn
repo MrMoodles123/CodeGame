@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://vdo0iw1ysq5s"]
+
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_4uk6w"]
+[ext_resource type="StyleBox" uid="uid://dassnfjfq60ho" path="res://Themes/button_normal.tres" id="2_mxvax"]
+[ext_resource type="StyleBox" uid="uid://dt6pix8a35b6r" path="res://Themes/button_pressed.tres" id="3_dvrca"]
+[ext_resource type="StyleBox" uid="uid://bl5wbffo7uauk" path="res://Themes/button_design_disabled.tres" id="3_m4onm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckqs5"]
+
+[node name="Button2" type="Button"]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 478.0
+offset_top = 261.0
+offset_right = 628.0
+offset_bottom = 411.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4uk6w")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = ExtResource("2_mxvax")
+theme_override_styles/hover = ExtResource("2_mxvax")
+theme_override_styles/pressed = ExtResource("3_dvrca")
+theme_override_styles/disabled = ExtResource("3_m4onm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ckqs5")
+text = "1"

@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2h8ok8yfc7wb"]
+
+[ext_resource type="Script" path="res://scripts/Leaderboard.gd" id="1_7tde5"]
+[ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_fbr4a"]
+[ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="3_e64fj"]
+[ext_resource type="Theme" uid="uid://bfn6c6vx2cakq" path="res://Themes/GUI_THEME.tres" id="4_e3woc"]
+[ext_resource type="PackedScene" uid="uid://dywt4wt7emsx" path="res://scenes/music_player.tscn" id="5_8p5nr"]
+[ext_resource type="PackedScene" uid="uid://dfbulwk3w1wlt" path="res://scenes/water_bg.tscn" id="6_0t0c4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42v6i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_beqcx"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+bg_color = Color(0.768627, 0.603922, 0.423529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.788235)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unaay"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+bg_color = Color(0.498855, 0.372033, 0.230084, 1)
+border_color = Color(0.768627, 0.603922, 0.423529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_j1gah"]
+
+[node name="Leaderboard" type="Node2D"]
+script = ExtResource("1_7tde5")
+
+[node name="Board" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fbr4a")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42v6i")
+
+[node name="TitleContainer" type="CenterContainer" parent="Board"]
+z_index = 1
+layout_mode = 2
+offset_left = 409.0
+offset_top = 27.0
+offset_right = 739.0
+offset_bottom = 115.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Board/TitleContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.466667)
+theme_override_constants/shadow_outline_size = 18
+theme_override_font_sizes/font_size = 54
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="Board"]
+z_index = 1
+custom_minimum_size = Vector2(470, 30)
+layout_mode = 2
+offset_left = 278.0
+offset_top = 121.0
+offset_right = 870.0
+offset_bottom = 157.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 10
+theme_override_constants/icon_margin = 5
+theme_override_font_sizes/font_size = 27
+theme_override_styles/panel = SubResource("StyleBoxFlat_beqcx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_beqcx")
+theme_override_styles/selected = SubResource("StyleBoxFlat_unaay")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_unaay")
+allow_search = false
+auto_height = true
+text_overrun_behavior = 0
+item_count = 5
+max_columns = 5
+item_0/text = "Level 1"
+item_1/text = "Level 2"
+item_2/text = "Level 3"
+item_3/text = "Level 4"
+item_4/text = "Level 5"
+
+[node name="MessageContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+offset_top = 172.0
+offset_right = 1154.0
+offset_bottom = 401.0
+
+[node name="TextMessage" type="Label" parent="Board/MessageContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Loading scores..."
+
+[node name="HighScores" type="CenterContainer" parent="Board"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -148.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_j1gah")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Board/HighScores"]
+clip_contents = false
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="ScoreItemContainer" type="VBoxContainer" parent="Board/HighScores/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+offset_top = 491.0
+offset_right = 1151.0
+offset_bottom = 636.0
+
+[node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource("3_e64fj")]
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+theme = ExtResource("4_e3woc")
+theme_override_font_sizes/font_size = 0
+text = "Close Leaderboard"
+
+[node name="MusicPlayer" parent="." instance=ExtResource("5_8p5nr")]
+
+[node name="WaterBG" parent="." instance=ExtResource("6_0t0c4")]
+z_index = -10
+
+[connection signal="item_selected" from="Board/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]

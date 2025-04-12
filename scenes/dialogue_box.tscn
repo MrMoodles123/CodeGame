@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://cd3610x1jevje"]
+
+[ext_resource type="Texture2D" uid="uid://drb0unwhsv7nv" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Dialouge UI/Premade dialog box  big.png" id="1_b874t"]
+[ext_resource type="Texture2D" uid="uid://d16eu1gn4kg6o" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="2_tkxy8"]
+[ext_resource type="Script" path="res://scripts/Tut_Cat.gd" id="3_ss4tw"]
+[ext_resource type="Texture2D" uid="uid://0m481012wu71" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/buttons/Square Buttons 26x19.png" id="4_gbxs4"]
+[ext_resource type="Texture2D" uid="uid://d1afqt5r6w4h6" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/white icons.png" id="5_h32g3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlpf8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_grmqq"]
+resource_name = "Blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 0, 16, 0, 15]
+}
+
+[sub_resource type="Animation" id="Animation_vghcw"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 13, 10, 12, 11, 10, 13, 0, 14, 0]
+}
+
+[sub_resource type="Animation" id="Animation_8gryy"]
+resource_name = "Still"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 4, 4.1, 4.2, 4.4, 4.5, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 13, 10, 12, 11, 10, 13, 0, 14, 0, 15, 0, 16, 0, 15, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hx1q1"]
+_data = {
+"Blink": SubResource("Animation_grmqq"),
+"Idle": SubResource("Animation_vghcw"),
+"Still": SubResource("Animation_8gryy")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gnmhf"]
+animation = &"Still"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uak0k"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bh5tk"]
+states/Start/position = Vector2(358, 86)
+states/Still/node = SubResource("AnimationNodeAnimation_gnmhf")
+states/Still/position = Vector2(474, 86)
+transitions = ["Start", "Still", SubResource("AnimationNodeStateMachineTransition_uak0k")]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eql00"]
+texture = ExtResource("4_gbxs4")
+region_rect = Rect2(11, 102, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmjv3"]
+texture = ExtResource("4_gbxs4")
+region_rect = Rect2(11, 102, 26, 19)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_501pj"]
+texture = ExtResource("4_gbxs4")
+region_rect = Rect2(59, 103, 26, 18)
+
+[sub_resource type="Theme" id="Theme_4psd3"]
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_eql00")
+Button/styles/normal = SubResource("StyleBoxTexture_jmjv3")
+Button/styles/pressed = SubResource("StyleBoxTexture_501pj")
+
+[node name="DialogueBoxPanel" type="Panel"]
+offset_left = -532.0
+offset_top = 322.0
+offset_right = 254.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wlpf8")
+
+[node name="DialogueBox" type="Sprite2D" parent="."]
+position = Vector2(393, 90)
+scale = Vector2(2.59375, 2.59375)
+texture = ExtResource("1_b874t")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(39, 44)
+scale = Vector2(2.65625, 2.65625)
+texture = ExtResource("2_tkxy8")
+centered = false
+hframes = 5
+vframes = 15
+frame = 15
+script = ExtResource("3_ss4tw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cat"]
+libraries = {
+"": SubResource("AnimationLibrary_hx1q1")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Cat"]
+libraries = {
+"": SubResource("AnimationLibrary_hx1q1")
+}
+tree_root = SubResource("AnimationNodeStateMachine_bh5tk")
+advance_expression_base_node = NodePath("../AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 21.0
+offset_right = 757.0
+offset_bottom = 55.0
+theme = SubResource("Theme_4psd3")
+action_mode = 0
+icon_alignment = 1
+
+[node name="Icon" type="Sprite2D" parent="Button"]
+position = Vector2(24, 15)
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("5_h32g3")
+hframes = 6
+vframes = 3
+frame = 15

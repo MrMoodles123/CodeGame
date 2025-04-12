@@ -1,0 +1,425 @@
+[gd_scene load_steps=26 format=3 uid="uid://jedgrwv3d68m"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_tjirl"]
+[ext_resource type="TileSet" uid="uid://c72eemeeuull3" path="res://Themes/tile_set.tres" id="2_7xp17"]
+[ext_resource type="Script" path="res://scripts/TileMap.gd" id="3_7ywqa"]
+[ext_resource type="Texture2D" uid="uid://bdftp321v52ba" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sideways Panel.png" id="4_4hmmx"]
+[ext_resource type="Texture2D" uid="uid://36y5jyy0xw54" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="4_6bk1p"]
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="4_6cxwa"]
+[ext_resource type="CodeHighlighter" uid="uid://oy61tegc7vvn" path="res://Themes/new_code_highlighter.tres" id="5_ir3fq"]
+[ext_resource type="Texture2D" uid="uid://111von7qu8ai" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="6_ftp2g"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="7_c85or"]
+[ext_resource type="FontFile" uid="uid://vmsvnoh42lqc" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-3-7x5-sproutLands.ttf" id="7_xj7d4"]
+[ext_resource type="Theme" uid="uid://buhtn3y0uoon3" path="res://Themes/ButtonTheme.tres" id="8_t6nf1"]
+[ext_resource type="FontFile" uid="uid://w0to1xymg7kc" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-4-7x7-sproutLands.ttf" id="9_ks2oe"]
+[ext_resource type="Texture2D" uid="uid://se4u5hagv6mq" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/All Icons_2.png" id="10_tx8v1"]
+[ext_resource type="Texture2D" uid="uid://d1afqt5r6w4h6" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/white icons.png" id="14_43ntq"]
+[ext_resource type="PackedScene" uid="uid://bvarefmkp5vwj" path="res://scenes/SettingsMenu.tscn" id="15_bm7a2"]
+[ext_resource type="PackedScene" uid="uid://ccsnn5usvi62l" path="res://scenes/sfx_player.tscn" id="16_qksxq"]
+[ext_resource type="PackedScene" uid="uid://dywt4wt7emsx" path="res://scenes/music_player.tscn" id="17_be7gs"]
+[ext_resource type="PackedScene" uid="uid://cd3610x1jevje" path="res://scenes/dialogue_box.tscn" id="18_rfs51"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ml5uh"]
+bg_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="Theme" id="Theme_1hbxm"]
+CodeEdit/colors/current_line_color = Color(0.858824, 0.858824, 0.858824, 0.14902)
+CodeEdit/styles/completion = SubResource("StyleBoxFlat_ml5uh")
+CodeEdit/styles/focus = SubResource("StyleBoxFlat_ml5uh")
+CodeEdit/styles/normal = SubResource("StyleBoxFlat_ml5uh")
+CodeEdit/styles/read_only = SubResource("StyleBoxFlat_ml5uh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbpph"]
+bg_color = Color(0.556863, 0.470588, 0.34902, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.909804, 0.811765, 0.65098, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="Theme" id="Theme_jntje"]
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_lbpph")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_lbpph")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7v76s"]
+texture = ExtResource("4_4hmmx")
+region_rect = Rect2(10, 139, 122, 106)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8hr"]
+bg_color = Color(0.556863, 0.470588, 0.34902, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.909804, 0.811765, 0.65098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bolrw"]
+bg_color = Color(0.67451, 0.584314, 0.470588, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tjirl")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -33)
+scale = Vector2(2.5, 2.5)
+tile_set = ExtResource("2_7xp17")
+format = 2
+layer_0/name = "water_bg"
+layer_1/name = "ground"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "items"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "highlight"
+layer_3/tile_data = PackedInt32Array()
+script = ExtResource("3_7ywqa")
+
+[node name="WaterBGTimer" type="Timer" parent="TileMap"]
+wait_time = 0.5
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-26, 223)
+
+[node name="CodeEditBG" type="Sprite2D" parent="."]
+position = Vector2(-328.25, 214)
+scale = Vector2(5.11328, 5.26389)
+texture = ExtResource("4_6bk1p")
+hframes = 2
+frame = 1
+
+[node name="ColorRect" type="ColorRect" parent="CodeEditBG"]
+offset_left = -52.0
+offset_top = -46.5699
+offset_right = 53.0
+offset_bottom = -45.5699
+color = Color(0.666667, 0.47451, 0.34902, 1)
+
+[node name="btnReset" type="Button" parent="."]
+offset_left = -53.0
+offset_top = -94.0
+offset_right = 63.0
+offset_bottom = -44.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 27
+text = "Clear"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -193.0
+offset_top = -84.0
+offset_right = -77.0
+offset_bottom = -37.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 27
+text = "Run"
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = -439.0
+offset_top = -84.0
+offset_right = -323.0
+offset_bottom = -37.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 27
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = -316.0
+offset_top = -84.0
+offset_right = -200.0
+offset_bottom = -37.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 27
+text = "Load"
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+offset_left = -584.0
+offset_top = -28.0
+offset_right = -73.0
+offset_bottom = 526.0
+theme = SubResource("Theme_1hbxm")
+theme_override_fonts/font = ExtResource("7_c85or")
+theme_override_font_sizes/font_size = 18
+text = "func execute():
+	plant_crop()
+		for i in 8:
+			if this:
+					do this long thing"
+placeholder_text = "Enter Code Here"
+scroll_smooth = true
+syntax_highlighter = ExtResource("5_ir3fq")
+highlight_all_occurrences = true
+highlight_current_line = true
+draw_tabs = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Output_Text_Box" type="RichTextLabel" parent="."]
+offset_left = -11.0
+offset_top = 372.0
+offset_right = 533.0
+offset_bottom = 538.0
+theme = SubResource("Theme_jntje")
+scroll_following = true
+
+[node name="Finish_Panel" type="Panel" parent="."]
+visible = false
+offset_left = -373.0
+offset_top = 53.0
+offset_right = 348.0
+offset_bottom = 426.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7v76s")
+
+[node name="Label" type="Label" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 83.0
+offset_right = 652.0
+offset_bottom = 284.0
+theme_override_fonts/font = ExtResource("4_6cxwa")
+theme_override_font_sizes/font_size = 45
+text = "Level Cleared! Well done!
+
+Your score:
+ 
+(Lower Is Better)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 292.0
+offset_right = 200.0
+offset_bottom = 355.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 18
+text = "Retry"
+
+[node name="NextLvlButton" type="Button" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 297.0
+offset_right = 431.0
+offset_bottom = 360.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 18
+text = "Next Level"
+
+[node name="HomeButton" type="Button" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 294.0
+offset_right = 689.0
+offset_bottom = 357.0
+theme = ExtResource("8_t6nf1")
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 18
+text = "Home"
+
+[node name="Timer_Label" type="Label" parent="."]
+offset_left = 424.0
+offset_top = -98.0
+offset_right = 546.0
+offset_bottom = -75.0
+theme_override_fonts/font = ExtResource("4_6cxwa")
+theme_override_font_sizes/font_size = 18
+text = "Time: 00:00:00"
+
+[node name="objectives_panel" type="Panel" parent="."]
+visible = false
+visibility_layer = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 109.0
+offset_top = 44.0
+offset_right = 401.0
+offset_bottom = 271.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="objectives_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_ks2oe")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bolrw")
+text = "Objectives:
+
+* Plant crops alonside river
+* Remove rocks if neccessary"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Count_Up_Timer" type="Timer" parent="."]
+
+[node name="objectiveButton" type="TextureButton" parent="."]
+offset_left = 480.0
+offset_top = 308.0
+offset_right = 980.0
+offset_bottom = 808.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("10_tx8v1")
+stretch_mode = 0
+
+[node name="CropCountLabel" type="Label" parent="."]
+offset_left = 452.0
+offset_top = -69.0
+offset_right = 548.0
+offset_bottom = -45.0
+theme_override_fonts/font = ExtResource("7_xj7d4")
+theme_override_font_sizes/font_size = 32
+text = "99/99"
+horizontal_alignment = 2
+
+[node name="CropIcon" type="Sprite2D" parent="CropCountLabel"]
+position = Vector2(-22, 7.12501)
+scale = Vector2(2.75, 2.5625)
+texture = ExtResource("6_ftp2g")
+hframes = 6
+vframes = 2
+frame = 5
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = -580.0
+offset_top = -84.0
+offset_right = -533.0
+offset_bottom = -37.0
+theme = ExtResource("8_t6nf1")
+
+[node name="Icon" type="Sprite2D" parent="HomeButton"]
+position = Vector2(23.375, 20.375)
+scale = Vector2(2.20312, 2.20312)
+texture = ExtResource("14_43ntq")
+hframes = 6
+vframes = 3
+frame = 14
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = -526.0
+offset_top = -84.0
+offset_right = -479.0
+offset_bottom = -37.0
+theme = ExtResource("8_t6nf1")
+
+[node name="Icon" type="Sprite2D" parent="SettingsButton"]
+position = Vector2(23.875, 20.875)
+scale = Vector2(2.14063, 2.14063)
+texture = ExtResource("14_43ntq")
+hframes = 6
+vframes = 3
+frame = 3
+
+[node name="HelpButton" type="Button" parent="."]
+offset_left = 479.0
+offset_top = 249.0
+offset_right = 531.0
+offset_bottom = 301.0
+theme = ExtResource("8_t6nf1")
+
+[node name="Icon" type="Sprite2D" parent="HelpButton"]
+position = Vector2(26, 23)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("14_43ntq")
+hframes = 6
+vframes = 3
+frame = 4
+
+[node name="HelpTimer" type="Timer" parent="HelpButton"]
+wait_time = 3.0
+one_shot = true
+
+[node name="MenuBG" parent="." instance=ExtResource("15_bm7a2")]
+visible = false
+z_index = 5
+
+[node name="DialogSave" type="FileDialog" parent="."]
+initial_position = 1
+size = Vector2i(400, 400)
+min_size = Vector2i(200, 200)
+theme_override_colors/folder_icon_color = Color(0.862745, 0.72549, 0.541176, 1)
+theme_override_colors/file_icon_color = Color(0.862745, 0.72549, 0.541176, 1)
+ok_button_text = "Save"
+access = 2
+show_hidden_files = true
+
+[node name="DialogLoad" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(400, 400)
+min_size = Vector2i(200, 200)
+theme_override_colors/folder_icon_color = Color(0.862745, 0.72549, 0.541176, 1)
+theme_override_colors/file_icon_color = Color(0.862745, 0.72549, 0.541176, 1)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+show_hidden_files = true
+
+[node name="BestScoreLabel" type="Label" parent="."]
+offset_left = 127.0
+offset_top = -79.0
+offset_right = 339.0
+offset_bottom = -56.0
+theme_override_fonts/font = ExtResource("4_6cxwa")
+theme_override_font_sizes/font_size = 18
+text = "Level 1 Best Score: 2000"
+
+[node name="SFXPlayer" parent="." instance=ExtResource("16_qksxq")]
+
+[node name="MusicPlayer" parent="." instance=ExtResource("17_be7gs")]
+
+[node name="DialogueBoxPanel" parent="." instance=ExtResource("18_rfs51")]
+visible = false
+offset_left = -486.0
+offset_top = 372.0
+offset_right = 300.0
+offset_bottom = 541.0
+
+[connection signal="timeout" from="TileMap/WaterBGTimer" to="TileMap" method="_on_water_bg_timer_timeout"]
+[connection signal="pressed" from="btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Finish_Panel/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Finish_Panel/NextLvlButton" to="." method="_on_next_lvl_button_pressed"]
+[connection signal="pressed" from="Finish_Panel/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="timeout" from="Count_Up_Timer" to="." method="_on_count_up_timer_timeout"]
+[connection signal="mouse_entered" from="objectiveButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="objectiveButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="timeout" from="HelpButton/HelpTimer" to="." method="_on_help_timer_timeout"]
+[connection signal="visibility_changed" from="MenuBG" to="." method="_on_menu_bg_visibility_changed"]
+[connection signal="file_selected" from="DialogSave" to="." method="_on_dialog_save_file_selected"]
+[connection signal="file_selected" from="DialogLoad" to="." method="_on_dialog_load_file_selected"]

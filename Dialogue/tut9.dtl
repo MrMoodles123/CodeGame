@@ -1,0 +1,24 @@
+YAY! You did it! 
+You'll have to deal with those rocks a lot, they love infesting our farms... ugh
+[signal arg="Clear"]
+Let's talk about arrays! 
+The farm is made up of an array. A 2D array.
+For now we'll focus on a 1D array, as 2D is a bit too complicated here.
+An array is a type of variable. It is declared similarly.
+[signal arg="array"]
+As seen in the coding interface, the only difference is that you have to say "= []"
+[signal arg="array_set"]
+This will create an empty array. If you want to add values to it, you use array.append(value)
+Where you replace "value" with a number or text or whatever.
+[signal arg="array_get"]
+You can get the values of an index of an array using square brackets like this:
+var i = array[0]. This returns the first element / value in the array.
+Just like our farm, arrays start at 0.
+Now how is this useful to you?
+Well for example, you can store all plantable locations in an array, and use that to plant crops on the location.
+[signal arg="full_array"]
+This can be done like so, where we loop through the farm and store the locations in 2 arrays
+One for x co-ordinates and one for y co-ordinates!
+Then, using the array.size() method, we'll loop through the arrays and plant crops there.
+Try it out!
+[signal arg="Done"]

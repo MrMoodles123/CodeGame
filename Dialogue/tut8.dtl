@@ -1,0 +1,16 @@
+Great job! You have now gathered 6 crops! What a star!
+[signal arg="Clear"]
+You're well on your way to becoming a great farmer!
+Let's talk about nested for loops. This is when you have a loop inside another loop!
+[signal arg="nested_loop"]
+It looks something like this! In this example, both the first and second loop will run 5 times.
+But everytime the first loop runs, the second one will run 5 times!
+This means that the second loop will actually run a total of 25 times! Wow!
+[signal arg="rocks"]
+NOT AGAIN! Those pesky rocks are back again!!
+But they're still no match for us! 
+[signal arg="break_rocks"]
+Use this nested for loop, which will loop through the entire farm!
+It will check if a rock is on each tile, and if it is, it will break them!
+Give it a go! Remember to pay very special attention to your indentation!
+[signal arg="Done"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfbulwk3w1wlt"]
+
+[ext_resource type="Script" path="res://scenes/TileMapBG.gd" id="1_qe60k"]
+[ext_resource type="TileSet" uid="uid://c72eemeeuull3" path="res://Themes/tile_set.tres" id="1_qgbnb"]
+
+[node name="WaterBG" type="TileMap"]
+tile_set = ExtResource("1_qgbnb")
+format = 2
+layer_1/name = "Ground"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Items"
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("1_qe60k")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

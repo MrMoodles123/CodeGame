@@ -1,0 +1,6 @@
+func execute():
+	for y in range(0,8):
+		for x in range(0,8):
+			if is_rock(x,y):
+				break_rock(x,y)
+	

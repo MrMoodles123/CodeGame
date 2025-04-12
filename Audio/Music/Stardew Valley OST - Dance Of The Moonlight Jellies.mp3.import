@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bujttwqtkwcq4"
+path="res://.godot/imported/Stardew Valley OST - Dance Of The Moonlight Jellies.mp3-bb97c7abde7708f14a51d9a86dcd80ac.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Stardew Valley OST - Dance Of The Moonlight Jellies.mp3"
+dest_files=["res://.godot/imported/Stardew Valley OST - Dance Of The Moonlight Jellies.mp3-bb97c7abde7708f14a51d9a86dcd80ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

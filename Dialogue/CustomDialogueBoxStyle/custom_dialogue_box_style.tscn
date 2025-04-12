@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqpb3ie51rwl5"]
+
+[ext_resource type="Script" path="res://Dialogue/CustomDialogueBoxStyle/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="2_nb24v"]
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+
+[node name="VN_TextboxLayer" parent="." instance=ExtResource("2_nb24v")]
+box_panel = "vn_textbox_default_panel.tres"
+box_size = Vector2(570, 100)
+box_margin_bottom = 20
+next_indicator_enabled = false
+next_indicator_show_on_questions = false
+apply_overrides_on_ready = true

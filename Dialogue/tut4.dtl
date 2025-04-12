@@ -1,0 +1,35 @@
+[signal arg="Clear"]
+Those 3 commands that you just learned are known as functions.
+Functions are an important part of programming, 
+as they allow you to refer to complicated and long code with a simple command name!
+[signal arg="plant_crop"]
+For example, here is the code behind the plant_crop() function in the coding interface. 
+It is super complicated and it is much easier to type plant_crop() than having to type out all those lines over and over again.
+[signal arg="Clear"]
+Now let's talk about if statements. They allow you to check things. 
+[signal arg="if1"]
+For example, the if statement "if is_plantable(1,0)" checks if a crop can be planted on the tile (1,0). 
+[signal arg="Tile2"]
+In this case, it would return true, as a crop can be planted there. 
+If you did the check for (0,0), it would return false.
+[signal arg="Clear"]
+[signal arg="if2"] 
+Here's how you could use this in code. Pay attention to the indent after the if.
+It is VERY important. Anything you want to happen inside the if, it has to be indented using the "tab" key.
+The editor will do this for you when press enter! It's smart!
+Now you may ask why you would need to use them. These can prevent errors. 
+If you try to plant a crop,harvest, or break a rock where you can't, the farm will complain and throw an error!
+This will penalise your performance, and your job is based on that! You need to perform well...
+Anywayyy....
+3 if statements are provided to help you, they are:
+"if is_plantable(x,y), if harvestable(x,y), if is_rock(x,y)"
+Remember to replace x and y with the actual co-ordinates you wish to check!
+"if" statements can also have "else" conditions. Basically, do this if true, else do that.
+[signal arg="if-else"]
+This is how you type that.
+[signal arg="if-chain"]
+You can also chain multiple if statements together like this!
+"elif" stands for "else if" so basically, do this if true, else do this if true
+Remember to check your indentation!
+[signal arg="Clear"]
+[signal arg="Tut4Done"]

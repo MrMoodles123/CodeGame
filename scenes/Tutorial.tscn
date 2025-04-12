@@ -1,0 +1,200 @@
+[gd_scene load_steps=22 format=3 uid="uid://w5c7kdk02cdt"]
+
+[ext_resource type="Script" path="res://scripts/Tutorial.gd" id="1_kanha"]
+[ext_resource type="Theme" uid="uid://buhtn3y0uoon3" path="res://Themes/ButtonTheme.tres" id="2_et314"]
+[ext_resource type="FontFile" uid="uid://508wmic3bgfa" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-2-5x5-sproutLands.ttf" id="3_ll3ik"]
+[ext_resource type="Texture2D" uid="uid://d1afqt5r6w4h6" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/white icons.png" id="4_rx8vy"]
+[ext_resource type="TileSet" uid="uid://c72eemeeuull3" path="res://Themes/tile_set.tres" id="5_ibtyj"]
+[ext_resource type="Script" path="res://scripts/TutTileMap.gd" id="6_e0v41"]
+[ext_resource type="Texture2D" uid="uid://36y5jyy0xw54" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="7_qytjs"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="8_any0u"]
+[ext_resource type="CodeHighlighter" uid="uid://oy61tegc7vvn" path="res://Themes/new_code_highlighter.tres" id="8_qy1ui"]
+[ext_resource type="PackedScene" uid="uid://cd3610x1jevje" path="res://scenes/dialogue_box.tscn" id="9_jm5y5"]
+[ext_resource type="Texture2D" uid="uid://nch208vymq6y" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/extras/arrow.png" id="10_hu3bw"]
+[ext_resource type="Texture2D" uid="uid://111von7qu8ai" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="11_64srq"]
+[ext_resource type="PackedScene" uid="uid://bvarefmkp5vwj" path="res://scenes/SettingsMenu.tscn" id="13_crw0r"]
+[ext_resource type="FontFile" uid="uid://vmsvnoh42lqc" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-3-7x5-sproutLands.ttf" id="13_s0t3i"]
+[ext_resource type="PackedScene" uid="uid://dywt4wt7emsx" path="res://scenes/music_player.tscn" id="14_r83tk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtgw8"]
+bg_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="Theme" id="Theme_1k3ju"]
+CodeEdit/styles/completion = SubResource("StyleBoxFlat_wtgw8")
+CodeEdit/styles/focus = SubResource("StyleBoxFlat_wtgw8")
+CodeEdit/styles/normal = SubResource("StyleBoxFlat_wtgw8")
+CodeEdit/styles/read_only = SubResource("StyleBoxFlat_wtgw8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lte3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nq37j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cfag2"]
+
+[sub_resource type="Theme" id="Theme_klb8o"]
+CodeEdit/styles/focus = SubResource("StyleBoxEmpty_lte3o")
+CodeEdit/styles/normal = SubResource("StyleBoxEmpty_nq37j")
+CodeEdit/styles/read_only = SubResource("StyleBoxEmpty_cfag2")
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_kanha")
+
+[node name="RunButton" type="Button" parent="."]
+offset_left = -154.0
+offset_top = -148.0
+offset_right = -77.0
+offset_bottom = -89.0
+theme = ExtResource("2_et314")
+theme_override_fonts/font = ExtResource("3_ll3ik")
+theme_override_font_sizes/font_size = 27
+text = "Run"
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 402.0
+offset_top = -152.0
+offset_right = 443.0
+offset_bottom = -111.0
+theme = ExtResource("2_et314")
+theme_override_fonts/font = ExtResource("3_ll3ik")
+theme_override_font_sizes/font_size = 27
+
+[node name="Icon" type="Sprite2D" parent="SettingsButton"]
+position = Vector2(20.5, 18.5)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("4_rx8vy")
+hframes = 6
+vframes = 3
+frame = 3
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 449.0
+offset_top = -152.0
+offset_right = 490.0
+offset_bottom = -111.0
+theme = ExtResource("2_et314")
+theme_override_fonts/font = ExtResource("3_ll3ik")
+theme_override_font_sizes/font_size = 27
+
+[node name="Icon" type="Sprite2D" parent="HomeButton"]
+position = Vector2(20.5, 17.5)
+scale = Vector2(1.8125, 1.8125)
+texture = ExtResource("4_rx8vy")
+hframes = 6
+vframes = 3
+frame = 14
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_ibtyj")
+format = 2
+layer_0/name = "WaterBG"
+layer_0/z_index = -2
+layer_1/name = "Groud"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Top"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Tut"
+layer_3/tile_data = PackedInt32Array()
+script = ExtResource("6_e0v41")
+
+[node name="WaterTimer" type="Timer" parent="TileMap"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-80, 169)
+
+[node name="CodeEditorBG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-405, 161)
+scale = Vector2(4.6875, 5.23611)
+texture = ExtResource("7_qytjs")
+hframes = 2
+frame = 1
+
+[node name="PlaceholderCodeEdit" type="CodeEdit" parent="."]
+offset_left = -639.0
+offset_top = -136.0
+offset_right = -171.0
+offset_bottom = 469.0
+theme = SubResource("Theme_1k3ju")
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.862745, 0.72549, 0.541176, 0.184314)
+theme_override_fonts/font = ExtResource("8_any0u")
+theme_override_font_sizes/font_size = 18
+draw_tabs = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+indent_size = 6
+indent_automatic = true
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+offset_left = -639.0
+offset_top = -136.0
+offset_right = -171.0
+offset_bottom = 469.0
+theme = SubResource("Theme_klb8o")
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.862745, 0.72549, 0.541176, 0.184314)
+theme_override_fonts/font = ExtResource("8_any0u")
+theme_override_font_sizes/font_size = 18
+syntax_highlighter = ExtResource("8_qy1ui")
+highlight_current_line = true
+draw_tabs = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+indent_size = 6
+indent_automatic = true
+
+[node name="DialogueBoxPanel" parent="." instance=ExtResource("9_jm5y5")]
+
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hu3bw")
+centered = false
+offset = Vector2(-90, -234)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="CropIcon" type="Sprite2D" parent="."]
+position = Vector2(412.5, -84.5)
+scale = Vector2(2.6875, 2.6875)
+texture = ExtResource("11_64srq")
+hframes = 6
+vframes = 2
+frame = 5
+
+[node name="CropCountLabel" type="Label" parent="CropIcon"]
+offset_left = 9.0
+offset_top = -3.0
+offset_right = 30.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("13_s0t3i")
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="CropItemTimer" type="Timer" parent="CropIcon"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="MenuBG" parent="." instance=ExtResource("13_crw0r")]
+visible = false
+top_level = true
+visibility_layer = 2
+z_index = 10
+position = Vector2(-4, 162)
+
+[node name="MusicPlayer" parent="." instance=ExtResource("14_r83tk")]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="pressed" from="RunButton" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="timeout" from="TileMap/WaterTimer" to="TileMap" method="_on_water_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CropIcon/CropItemTimer" to="." method="_on_crop_item_timer_timeout"]

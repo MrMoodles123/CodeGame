@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxy7ffb88gah6"]
+
+[ext_resource type="Script" path="res://scripts/CodeEditor.gd" id="1_h4wai"]
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_feirx"]
+[ext_resource type="StyleBox" uid="uid://bkhhoxa1viiij" path="res://scenes/button_design.tres" id="3_v6d86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstjg"]
+
+[sub_resource type="Theme" id="Theme_jls7h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03775"]
+content_margin_left = 0.0
+content_margin_top = 20.0
+bg_color = Color(0.150075, 0.150075, 0.150075, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_a8qjo"]
+number_color = Color(0.676896, 0.41913, 0.136374, 1)
+symbol_color = Color(0.717287, 0.389663, 0.110841, 1)
+function_color = Color(0.736574, 0.604751, 0.221326, 1)
+member_variable_color = Color(0.41933, 0.529274, 0.990574, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o600q"]
+bg_color = Color(0.285251, 0.57403, 0.295755, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -537.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hstjg")
+script = ExtResource("1_h4wai")
+
+[node name="Editor" type="CodeEdit" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 80.0
+offset_right = 576.0
+offset_bottom = 626.0
+theme = SubResource("Theme_jls7h")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_03775")
+placeholder_text = "Enter Code Here"
+drag_and_drop_selection_enabled = false
+scroll_smooth = true
+syntax_highlighter = SubResource("CodeHighlighter_a8qjo")
+highlight_all_occurrences = true
+highlight_current_line = true
+line_folding = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+
+[node name="Run" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 37.0
+offset_right = 566.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("2_feirx")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_o600q")
+text = "RUN"
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 27.0
+offset_right = 151.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_feirx")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("3_v6d86")
+text = "SAVE"
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 27.0
+offset_right = 299.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("2_feirx")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("3_v6d86")
+text = "Load"
+
+[node name="dialog_save" type="FileDialog" parent="."]
+initial_position = 2
+size = Vector2i(400, 400)
+visible = true
+theme_override_colors/folder_icon_color = Color(0.721569, 0.631373, 0.517647, 1)
+theme_override_colors/file_icon_color = Color(0.721569, 0.631373, 0.517647, 1)
+ok_button_text = "Save"
+dialog_hide_on_ok = true
+root_subfolder = "user_scripts"
+show_hidden_files = true
+
+[node name="dialog_load" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(400, 400)
+visible = true
+theme_override_colors/folder_icon_color = Color(0.721569, 0.631373, 0.517647, 1)
+theme_override_colors/file_icon_color = Color(0.721569, 0.631373, 0.517647, 1)
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+root_subfolder = "user_scripts"
+show_hidden_files = true
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="file_selected" from="dialog_save" to="." method="_on_dialog_save_file_selected"]
+[connection signal="file_selected" from="dialog_load" to="." method="_on_dialog_load_file_selected"]

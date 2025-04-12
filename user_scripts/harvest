@@ -1,0 +1,10 @@
+func execute():
+	harvest_col(3)
+	harvest_col(5)
+func harvest_row(y):
+	for x in range(0,8):
+		harvest(x,y)
+		
+func harvest_col(x):
+	for y in range(0,8):
+		harvest(x,y)

@@ -1,0 +1,12 @@
+[signal arg="CropCount"]
+Well done! You can see here on the right you have collected 1 crop. 
+This will track how many crops you have collected, so you can work towards your goal!
+[signal arg="Clear"]
+[signal arg="GenRock"]
+OH NOO!
+A rock is now blocking a spot where we can plant a crop!
+But don't fear! We can get rid of it!
+Simply type "break_rock(0,1)" into the coding interface!
+[signal arg="BreakRock"]
+It's as easy as that!
+[signal arg="Done"]

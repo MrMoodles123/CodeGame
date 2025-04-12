@@ -1,0 +1,25 @@
+[signal arg="Tut10Crop"]
+Well done! You're almost there! This is the final part of the tutorial!
+[signal arg="Clear"]
+I mentioned functions earlier, and how they are useful. 
+Let's learn how to create your own!
+[signal arg="func"]
+functions are declared by first typing "func" followed by the name of the function and a colon (:).
+The main function here is the execute() function. This function has to be in the code everytime.
+Your code will not run without it, and if you try to, it will give an error.
+As with for loops and if statements, you need have everything indented under the function header.
+In this execute function you have to type your code that you want to run.
+[signal arg="exec_eg"]
+This is how you would now type harvesting of a row of crops for example.
+Now let's talk about creating our own functions.
+[signal arg="Clear"]
+If we wish to harvest multiple rows of crops, in this case, above and below the river,
+[signal arg="plant_func"]
+We can create this function underneath our execute function.
+It will allow us to loop through any y co-ordinate and harvest crops.
+The 'y' inside brackets is a parameter, when you call this function, like you would with harvest()
+you have to put a number in there to tell the function what y co-ordinate to plant at. 
+[signal arg="calling"]
+Now we can call our new function in the execute function, we will call it twice, for below and above the river!
+Give it a go! Make sure your indentation is correct!
+[signal arg="Done"]

@@ -1,0 +1,10 @@
+func execute():
+	plant_col(3)
+	plant_col(5)
+func plant_row(y):
+	for x in range(0,8):
+		plant_crop(x,y)
+		
+func plant_col(x):
+	for y in range(0,8):
+		plant_crop(x,y)

@@ -1,0 +1,15 @@
+[signal arg="Clear"]
+[signal arg="start6"]
+WOW! Look at that, your farm has gotten bigger!
+There is now a whole river flowing through it!
+We need to plant crops all along the river! But doing it one by one will take forever...
+This is where loops will come in handy. More specifically, for loops!
+For loops will loop and execute the code for however many times you want it to.
+The code "for x in range(0,5):" will loop 5 times.
+x in this case is a variable, which gets assigned the value of 0, and increases by 1 until it reaches 4.
+This may be confusing as it says (0,5). The loop will run until the 2nd number minus 1.
+If we wanted to speed up the planting process here, since there is a river...
+[signal arg="loop"]
+We can type this for loop (that is in the code editior).
+This will plant crops along the river! Try it! Remember to hit the "run" button when done!
+[signal arg="Done"]

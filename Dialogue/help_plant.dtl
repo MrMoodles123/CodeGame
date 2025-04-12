@@ -1,0 +1,5 @@
+You need my help?
+Sure! Here's a hint
+You need to plant crops on the squares highlighted in yellow!
+Use plant_rock(x, y) and is_plantable(x, y) to find spots and plant them there.
+[signal arg="finished"]

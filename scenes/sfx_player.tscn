@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccsnn5usvi62l"]
+
+[ext_resource type="AudioStream" uid="uid://cheql8jyglygp" path="res://Audio/SFX/RockSFX.mp3" id="1_3kjmk"]
+[ext_resource type="AudioStream" uid="uid://c0blq28m8jlq1" path="res://Audio/SFX/HarvestSFX.mp3" id="2_eq4d5"]
+[ext_resource type="AudioStream" uid="uid://mohfddfgkvnb" path="res://Audio/SFX/PlantSFX.mp3" id="3_phaim"]
+[ext_resource type="AudioStream" uid="uid://bqtntm5k4b1lt" path="res://Audio/SFX/Error - Sound Effect.mp3" id="4_gt2l2"]
+
+[node name="SFXPlayer" type="Node2D"]
+
+[node name="BreakRockAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3kjmk")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="HarvestAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eq4d5")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="PlantAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_phaim")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="ErrorAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gt2l2")
+volume_db = -10.0
+bus = &"SFX"

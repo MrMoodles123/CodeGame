@@ -1,0 +1,245 @@
+[gd_scene load_steps=20 format=3 uid="uid://d2tvhqmpy0nu3"]
+
+[ext_resource type="Texture2D" uid="uid://givw2svfeuxr" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="1_gy8o0"]
+[ext_resource type="Script" path="res://scripts/signup.gd" id="2_hqo3q"]
+[ext_resource type="FontFile" uid="uid://bnvea56rpl0g0" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_a6a4c"]
+[ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4_mxbei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8ecn"]
+atlas = ExtResource("1_gy8o0")
+region = Rect2(139, 12, 106, 122)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_63x0e"]
+texture = SubResource("AtlasTexture_c8ecn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0xp8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5l6x"]
+bg_color = Color(0.676325, 0.583849, 0.46882, 1)
+border_width_bottom = 10
+border_color = Color(0.461309, 0.385809, 0.291106, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f1qi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnj6w"]
+bg_color = Color(0.289741, 0.289741, 0.289741, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8fdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3paew"]
+bg_color = Color(0.723462, 0.631565, 0.517609, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4equ0"]
+bg_color = Color(0.723462, 0.631565, 0.517609, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxv27"]
+bg_color = Color(0.676325, 0.583849, 0.46882, 1)
+border_width_bottom = 10
+border_color = Color(0.461309, 0.385809, 0.291106, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fclil"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27x4f"]
+bg_color = Color(0.289741, 0.289741, 0.289741, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr566"]
+bg_color = Color(0.676325, 0.583849, 0.46882, 1)
+border_width_bottom = 10
+border_color = Color(0.461309, 0.385809, 0.291106, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7c3j5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk0pj"]
+bg_color = Color(0.289741, 0.289741, 0.289741, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="Control" type="Panel"]
+clip_children = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -222.0
+offset_right = 318.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_63x0e")
+script = ExtResource("2_hqo3q")
+
+[node name="default_panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 634.0
+offset_bottom = 298.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_d0xp8")
+
+[node name="message" type="Label" parent="default_panel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 107.0
+offset_right = 534.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_a6a4c")
+theme_override_font_sizes/font_size = 20
+text = "* Sign up to create a profile and save progress
+"
+
+[node name="Signup" parent="default_panel" instance=ExtResource("4_mxbei")]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 215.0
+offset_right = 427.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5l6x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8f1qi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pnj6w")
+text = "Sign up"
+
+[node name="Label" type="Label" parent="default_panel"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 30.0
+offset_right = 539.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_a6a4c")
+theme_override_font_sizes/font_size = 50
+text = "playing as a guest"
+
+[node name="Close" parent="default_panel" instance=ExtResource("4_mxbei")]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 335.0
+offset_right = 430.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5l6x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8f1qi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pnj6w")
+text = "Close Profile
+"
+
+[node name="form_panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 412.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q8fdu")
+
+[node name="username" type="LineEdit" parent="form_panel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 30.0
+offset_right = 594.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3paew")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3paew")
+placeholder_text = "USERNAME"
+max_length = 30
+clear_button_enabled = true
+caret_blink = true
+
+[node name="password" type="LineEdit" parent="form_panel"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 108.0
+offset_right = 592.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_4equ0")
+placeholder_text = "PASSWORD"
+max_length = 30
+clear_button_enabled = true
+caret_blink = true
+secret = true
+
+[node name="Register" parent="form_panel" instance=ExtResource("4_mxbei")]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 222.0
+offset_right = 427.0
+offset_bottom = 277.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxv27")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fclil")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_27x4f")
+text = "Register"
+
+[node name="Close" parent="form_panel" instance=ExtResource("4_mxbei")]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 332.0
+offset_right = 428.0
+offset_bottom = 387.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_pr566")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7c3j5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qk0pj")
+text = "Close Profile
+"
+
+[connection signal="pressed" from="default_panel/Signup" to="." method="_on_signup_pressed"]
+[connection signal="pressed" from="default_panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="form_panel/Register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="form_panel/Close" to="." method="_on_close_pressed"]

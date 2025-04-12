@@ -1,0 +1,33 @@
+Hello!! My name is Misty!
+Thank you for applying to work and help me here on my farm!
+I am so glad to meet you!
+I know that you are new to farming here and I will be teaching you how to farm!
+Let's get started...
+...
+[signal arg="whole_farm"]
+First, here you can see your farm, the size of the farm will get bigger as you get more experienced.
+The farm is a 2D grid. Each block of the grid is a tile. Some tiles can be planted on, some can't.
+[signal arg="Tile0"]
+Tiles have their co-ordinates to make them unique. The top left most tile has the co-ordinates of (0,0).
+The first number is the x co-ordinate, and the 2nd number is the y co-ordinate!
+[signal arg="Tile1"]
+This tile here is at co-ordinates (0,1).
+[signal arg="Tile2"]
+This one is at (1,0).
+I know it is weird to start counting from 0, but that is just how things are done when coding...
+[signal arg="Clear"]
+What's coding, you ask?
+Well it's how we farm around here!
+See, we are pretty advanced and we use a magical typing interface to farm.
+[signal arg="CodeEdit"]
+On the left here, you can see your coding interface...
+We type our commands into here, and the farm will obey! I will show you all the commands later!
+[signal arg="Clear"]
+Let's take a step back and explain how farming actually works.
+Crops can only be planted when there is water in an adjacent tile.
+[signal arg="Crops"]
+In this starter farm, crops can only be planted in the squares highlighted in yellow.
+[signal arg="Top_Crop"]
+Try it now! Type "plant_crop(1,0)" in the coding interface to plant a crop in the co-ordinates of (1,0)
+Press the run button when done to update the farm!
+[signal arg="Tut1Done"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://sfnxmbv718ed"]
+
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_gwwyh"]
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_qbew6"]
+[ext_resource type="Theme" uid="uid://bfn6c6vx2cakq" path="res://Themes/GUI_THEME.tres" id="2_tsqta"]
+[ext_resource type="PackedScene" uid="uid://dfbulwk3w1wlt" path="res://scenes/water_bg.tscn" id="3_ldica"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwwyh")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 36.0
+offset_right = 172.0
+offset_bottom = 100.0
+theme = ExtResource("2_tsqta")
+theme_override_fonts/font = ExtResource("2_qbew6")
+theme_override_font_sizes/font_size = 63
+text = "<--"
+
+[node name="WaterBG" parent="." instance=ExtResource("3_ldica")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 46.0
+offset_top = 211.0
+offset_right = 1116.0
+offset_bottom = 410.0
+
+[node name="Level_container" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+alignment = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

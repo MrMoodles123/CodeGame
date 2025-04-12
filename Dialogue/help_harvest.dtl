@@ -1,0 +1,6 @@
+You need my help?
+Sure! Here's a hint
+You need to harvest crops on the squares highlighted in yellow!
+Use harvest(x, y) and harvestable(x, y) to find crops and harvest them.
+Keep on going until you harvest all of them!
+[signal arg="finished"]

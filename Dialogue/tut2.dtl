@@ -1,0 +1,8 @@
+[signal arg="Tut2Crop"]
+Well done! You did it!
+[signal arg="Clear"]
+Now it's time to harvest the crop!
+you can do this by typing "harvest(1,0)" in the coding interface.
+[signal arg="harvest"]
+Give it a go!
+[signal arg="Done"]

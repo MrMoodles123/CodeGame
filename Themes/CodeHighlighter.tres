@@ -1,0 +1,7 @@
+[gd_resource type="CodeHighlighter" format=3 uid="uid://mi801oyuhmi1"]
+
+[resource]
+number_color = Color(0.607843, 0.831373, 0.764706, 1)
+symbol_color = Color(0.862745, 0.878431, 0.823529, 1)
+function_color = Color(0.627451, 0.615686, 0.831373, 1)
+member_variable_color = Color(0.572549, 0.698039, 0.831373, 1)

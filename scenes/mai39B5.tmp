@@ -1,0 +1,431 @@
+[gd_scene load_steps=25 format=3 uid="uid://jedgrwv3d68m"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_3an05"]
+[ext_resource type="Texture2D" uid="uid://d2qb1nvogldiq" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_kii2m"]
+[ext_resource type="Texture2D" uid="uid://b5lckmsvbd8na" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="3_1x3cc"]
+[ext_resource type="Texture2D" uid="uid://cnytyce18ln3p" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass_OutLine.png" id="4_7bn25"]
+[ext_resource type="Texture2D" uid="uid://111von7qu8ai" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="5_3ruse"]
+[ext_resource type="Texture2D" uid="uid://du3jtudujxmtk" path="res://Demo Art/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="6_bd215"]
+[ext_resource type="Script" path="res://scripts/TileMap.gd" id="7_wt72f"]
+[ext_resource type="Texture2D" uid="uid://bthfa31fb04om" path="res://goal.png" id="8_2xhsh"]
+[ext_resource type="Texture2D" uid="uid://2t472fvcawo3" path="res://hint-4.png" id="9_f6r5i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sux0i"]
+texture = ExtResource("2_kii2m")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nkyo3"]
+texture = ExtResource("3_1x3cc")
+0:0/animation_columns = 4
+0:0/animation_speed = 0.2
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qhhl"]
+texture = ExtResource("4_7bn25")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajebj"]
+texture = ExtResource("5_3ruse")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrmfq"]
+texture = ExtResource("6_bd215")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5r1wa"]
+sources/0 = SubResource("TileSetAtlasSource_sux0i")
+sources/1 = SubResource("TileSetAtlasSource_nkyo3")
+sources/2 = SubResource("TileSetAtlasSource_8qhhl")
+sources/3 = SubResource("TileSetAtlasSource_ajebj")
+sources/4 = SubResource("TileSetAtlasSource_lrmfq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgtvf"]
+bg_color = Color(0.541176, 0.290196, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60jgg"]
+bg_color = Color(0.443137, 0.223529, 0.439216, 1)
+
+[sub_resource type="Theme" id="Theme_piop5"]
+Button/styles/hover = SubResource("StyleBoxFlat_rgtvf")
+Button/styles/normal = SubResource("StyleBoxFlat_60jgg")
+
+[sub_resource type="Theme" id="Theme_1hbxm"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_0f5hy"]
+number_color = Color(0.643137, 0.760784, 0.388235, 1)
+symbol_color = Color(0.607843, 0.831373, 0.764706, 1)
+function_color = Color(0.396078, 0.54902, 0.631373, 1)
+member_variable_color = Color(0.4427, 0.618526, 0.995208, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbpph"]
+bg_color = Color(0.207843, 0.215686, 0.219608, 1)
+
+[sub_resource type="Theme" id="Theme_jntje"]
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_lbpph")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8hr"]
+bg_color = Color(0.596412, 0.49066, 0.531032, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.290196, 0.345098, 0.556863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bolrw"]
+bg_color = Color(0.676325, 0.583849, 0.46882, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3an05")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2.5, 2.5)
+tile_set = SubResource("TileSet_5r1wa")
+format = 2
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("7_wt72f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-26, 223)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -20.0
+offset_top = -93.0
+offset_right = 96.0
+offset_bottom = -59.0
+theme = SubResource("Theme_piop5")
+theme_override_font_sizes/font_size = 20
+text = "Run"
+
+[node name="btnReset" type="Button" parent="."]
+offset_left = 107.0
+offset_top = -92.0
+offset_right = 226.0
+offset_bottom = -61.0
+text = "Reset"
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+offset_left = -596.0
+offset_top = -97.0
+offset_right = -35.0
+offset_bottom = 532.0
+theme = SubResource("Theme_1hbxm")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Enter Code Here"
+scroll_smooth = true
+syntax_highlighter = SubResource("CodeHighlighter_0f5hy")
+highlight_all_occurrences = true
+highlight_current_line = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+autostart = true
+
+[node name="Output_Text_Box" type="RichTextLabel" parent="."]
+offset_left = -11.0
+offset_top = 372.0
+offset_right = 533.0
+offset_bottom = 538.0
+theme = SubResource("Theme_jntje")
+
+[node name="Finish_Panel" type="Panel" parent="."]
+offset_left = -517.0
+offset_top = 86.0
+offset_right = 469.0
+offset_bottom = 371.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 47.0
+offset_right = 798.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 47
+text = "Level Cleared! Well done!
+Your score: 
+(Lower Is Better)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer_Label" type="Label" parent="."]
+offset_left = 436.0
+offset_top = -98.0
+offset_right = 547.0
+offset_bottom = -75.0
+text = "Time: 00:00:00"
+
+[node name="objectives_panel" type="Panel" parent="."]
+visibility_layer = 2
+offset_left = 217.0
+offset_top = 82.0
+offset_right = 509.0
+offset_bottom = 309.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="objectives_panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 287.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bolrw")
+text = "Objectives:
+
+* Plant crops alonside river
+* Remove rocks if neccessary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hint_panel" type="Panel" parent="."]
+visibility_layer = 2
+offset_left = 217.0
+offset_top = 35.0
+offset_right = 509.0
+offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="hint_panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 287.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bolrw")
+text = "Documentation:
+
+* plant_crop( x, y)
+* break_rock(x,y)
+*harvest(x,y)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count_Up_Timer" type="Timer" parent="."]
+
+[node name="objectiveButton" type="TextureButton" parent="."]
+offset_left = 480.0
+offset_top = 308.0
+offset_right = 980.0
+offset_bottom = 808.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("8_2xhsh")
+stretch_mode = 0
+
+[node name="hintButton" type="TextureButton" parent="."]
+offset_left = 478.0
+offset_top = 236.0
+offset_right = 990.0
+offset_bottom = 748.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("9_f6r5i")
+
+[node name="Save" type="Button" parent="."]
+offset_left = 379.0
+offset_top = -56.0
+offset_right = 534.0
+offset_bottom = -8.0
+text = "Save"
+
+[node name="Load" type="Button" parent="."]
+offset_left = 376.0
+offset_top = 9.0
+offset_right = 531.0
+offset_bottom = 57.0
+text = "Load"
+
+[node name="fd_save" type="FileDialog" parent="."]
+initial_position = 1
+size = Vector2i(392, 159)
+visible = true
+theme_override_colors/folder_icon_color = Color(0.723462, 0.631565, 0.517609, 1)
+theme_override_colors/file_icon_color = Color(0.723462, 0.631565, 0.517609, 1)
+ok_button_text = "Save"
+dialog_hide_on_ok = true
+dialog_close_on_escape = false
+root_subfolder = "user_scripts/"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Count_Up_Timer" to="." method="_on_count_up_timer_timeout"]
+[connection signal="mouse_entered" from="objectiveButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="objectiveButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="mouse_entered" from="hintButton" to="." method="_on_hint_button_mouse_entered"]
+[connection signal="mouse_exited" from="hintButton" to="." method="_on_hint_button_mouse_exited"]
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

@@ -1,0 +1,15 @@
+Now let's talk about variables.
+Variables allow you to to refer to a value multiple times, and dynamically change the value.
+[signal arg="if2"]
+In our previous if statement, you can see that by re-typing the co-ordinates, 
+it's possible that you can make a mistake.
+So by using a variable, we can stop that.
+[signal arg="vars"]
+This is how we can implement variables, we first start by typing "var" to indicate that it is a variable.
+Then we give the variable a name. the name should start with a letter and have no special characters.
+It also can't have any spaces in it, and a variable can't have the same name as another.
+Then you put an equals sign and after that, the value you want it to have.
+In this case, we created 2 variables, for x and y co-ordinates, and then replaced those into the function calls.
+That way, we can't make a mistake by accidentally putting the wrong values in "plant_crop".
+If you type this and press the run button, you will see that it will work! Try it!
+[signal arg="Done"]

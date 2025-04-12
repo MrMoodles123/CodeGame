@@ -1,0 +1,206 @@
+[gd_scene load_steps=15 format=3 uid="uid://jedgrwv3d68m"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_v1cpl"]
+[ext_resource type="TileSet" uid="uid://c72eemeeuull3" path="res://Themes/tile_set.tres" id="2_unke1"]
+[ext_resource type="Script" path="res://TileMap.gd" id="3_eery2"]
+[ext_resource type="Texture2D" uid="uid://bthfa31fb04om" path="res://goal.png" id="8_3h0lb"]
+[ext_resource type="Texture2D" uid="uid://2t472fvcawo3" path="res://hint-4.png" id="9_eoq88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgtvf"]
+bg_color = Color(0.541176, 0.290196, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60jgg"]
+bg_color = Color(0.443137, 0.223529, 0.439216, 1)
+
+[sub_resource type="Theme" id="Theme_piop5"]
+Button/styles/hover = SubResource("StyleBoxFlat_rgtvf")
+Button/styles/normal = SubResource("StyleBoxFlat_60jgg")
+
+[sub_resource type="Theme" id="Theme_1hbxm"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_0f5hy"]
+number_color = Color(0.643137, 0.760784, 0.388235, 1)
+symbol_color = Color(0.607843, 0.831373, 0.764706, 1)
+function_color = Color(0.396078, 0.54902, 0.631373, 1)
+member_variable_color = Color(0.4427, 0.618526, 0.995208, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbpph"]
+bg_color = Color(0.207843, 0.215686, 0.219608, 1)
+
+[sub_resource type="Theme" id="Theme_jntje"]
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_lbpph")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf8hr"]
+bg_color = Color(0.596412, 0.49066, 0.531032, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.290196, 0.345098, 0.556863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bolrw"]
+bg_color = Color(0.676325, 0.583849, 0.46882, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_v1cpl")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2.5, 2.5)
+tile_set = ExtResource("2_unke1")
+format = 2
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("3_eery2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-26, 223)
+
+[node name="Button" type="Button" parent="."]
+offset_left = -20.0
+offset_top = -93.0
+offset_right = 96.0
+offset_bottom = -59.0
+theme = SubResource("Theme_piop5")
+theme_override_font_sizes/font_size = 20
+text = "Run"
+
+[node name="btnReset" type="Button" parent="."]
+offset_left = 107.0
+offset_top = -92.0
+offset_right = 226.0
+offset_bottom = -61.0
+text = "Reset"
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+offset_left = -596.0
+offset_top = -97.0
+offset_right = -35.0
+offset_bottom = 532.0
+theme = SubResource("Theme_1hbxm")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Enter Code Here"
+scroll_smooth = true
+syntax_highlighter = SubResource("CodeHighlighter_0f5hy")
+highlight_all_occurrences = true
+highlight_current_line = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_bookmarks = true
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+gutters_zero_pad_line_numbers = true
+gutters_draw_fold_gutter = true
+code_completion_enabled = true
+indent_automatic = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+autostart = true
+
+[node name="Output_Text_Box" type="RichTextLabel" parent="."]
+offset_left = -11.0
+offset_top = 372.0
+offset_right = 533.0
+offset_bottom = 538.0
+theme = SubResource("Theme_jntje")
+
+[node name="Finish_Panel" type="Panel" parent="."]
+offset_left = -517.0
+offset_top = 86.0
+offset_right = 469.0
+offset_bottom = 371.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="Finish_Panel"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 47.0
+offset_right = 798.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 47
+text = "Level Cleared! Well done!
+Your score: 
+(Lower Is Better)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer_Label" type="Label" parent="."]
+offset_left = 436.0
+offset_top = -98.0
+offset_right = 547.0
+offset_bottom = -75.0
+text = "Time: 00:00:00"
+
+[node name="objectives_panel" type="Panel" parent="."]
+visibility_layer = 2
+offset_left = 217.0
+offset_top = 82.0
+offset_right = 509.0
+offset_bottom = 309.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="objectives_panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 287.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bolrw")
+text = "Objectives:
+
+* Plant crops alonside river
+* Remove rocks if neccessary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hint_panel" type="Panel" parent="."]
+visibility_layer = 2
+offset_left = 217.0
+offset_top = 35.0
+offset_right = 509.0
+offset_bottom = 257.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf8hr")
+
+[node name="Label" type="Label" parent="hint_panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 15.0
+offset_right = 287.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bolrw")
+text = "Documentation:
+
+* plant_crop( x, y)
+* break_rock(x,y)
+*harvest(x,y)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count_Up_Timer" type="Timer" parent="."]
+
+[node name="objectiveButton" type="TextureButton" parent="."]
+offset_left = 480.0
+offset_top = 308.0
+offset_right = 980.0
+offset_bottom = 808.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("8_3h0lb")
+stretch_mode = 0
+
+[node name="hintButton" type="TextureButton" parent="."]
+offset_left = 478.0
+offset_top = 236.0
+offset_right = 990.0
+offset_bottom = 748.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("9_eoq88")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Count_Up_Timer" to="." method="_on_count_up_timer_timeout"]
+[connection signal="mouse_entered" from="objectiveButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="objectiveButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="mouse_entered" from="hintButton" to="." method="_on_hint_button_mouse_entered"]
+[connection signal="mouse_exited" from="hintButton" to="." method="_on_hint_button_mouse_exited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hw2puv5m65x1"
+path="res://.godot/imported/Stardew Valley OST - Spring (Wild Horseradish Jam).mp3-1ebc1a64d5c03ea6facabafd99b5e937.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Stardew Valley OST - Spring (Wild Horseradish Jam).mp3"
+dest_files=["res://.godot/imported/Stardew Valley OST - Spring (Wild Horseradish Jam).mp3-1ebc1a64d5c03ea6facabafd99b5e937.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

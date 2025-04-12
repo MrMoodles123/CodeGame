@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5nqnklsor02t"
+path="res://.godot/imported/Stardew Valley OST - Land Of Green And Gold (Leah's Theme).mp3-29227b3c7d0e8254af0374b2084d9feb.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Stardew Valley OST - Land Of Green And Gold (Leah's Theme).mp3"
+dest_files=["res://.godot/imported/Stardew Valley OST - Land Of Green And Gold (Leah's Theme).mp3-29227b3c7d0e8254af0374b2084d9feb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

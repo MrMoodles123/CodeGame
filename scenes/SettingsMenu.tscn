@@ -1,0 +1,194 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvarefmkp5vwj"]
+
+[ext_resource type="Texture2D" uid="uid://36y5jyy0xw54" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" id="1_573sk"]
+[ext_resource type="Script" path="res://scripts/SettingsMenu.gd" id="2_4nm67"]
+[ext_resource type="FontFile" uid="uid://w0to1xymg7kc" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-4-7x7-sproutLands.ttf" id="2_oagpg"]
+[ext_resource type="Theme" uid="uid://buhtn3y0uoon3" path="res://Themes/ButtonTheme.tres" id="3_r8lo1"]
+[ext_resource type="Texture2D" uid="uid://cgkdmb6rcoydv" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Icons/All Icons.png" id="4_5aj63"]
+[ext_resource type="FontFile" uid="uid://l0h7op10aboy" path="res://Demo Art/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" id="6_hivum"]
+
+[sub_resource type="Theme" id="Theme_hsr25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3dk5"]
+
+[sub_resource type="Theme" id="Theme_ro0jo"]
+default_font = ExtResource("6_hivum")
+default_font_size = 18
+OptionButton/fonts/font = ExtResource("6_hivum")
+
+[node name="MenuBG" type="Sprite2D"]
+scale = Vector2(5.08887, 5.08887)
+texture = ExtResource("1_573sk")
+hframes = 2
+script = ExtResource("2_4nm67")
+
+[node name="Blur" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -237.0
+offset_top = -128.0
+offset_right = 280.0
+offset_bottom = 150.0
+color = Color(0, 0, 0, 0.419608)
+
+[node name="MusicLabel" type="Label" parent="."]
+offset_left = -48.3408
+offset_top = -31.2447
+offset_right = -18.3408
+offset_bottom = -23.2447
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 9
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+offset_left = -15.7206
+offset_top = -29.8691
+offset_right = 191.279
+offset_bottom = -13.8691
+scale = Vector2(0.3, 0.3)
+theme = SubResource("Theme_hsr25")
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="SFX" type="Label" parent="."]
+offset_left = -48.3408
+offset_top = -21.4193
+offset_right = -18.3408
+offset_bottom = -13.4193
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 9
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="."]
+offset_left = -30.0
+offset_top = -20.0
+offset_right = 225.0
+offset_bottom = -4.0
+scale = Vector2(0.3, 0.3)
+theme = SubResource("Theme_hsr25")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = -48.3408
+offset_top = -55.6116
+offset_right = -37.3408
+offset_bottom = -44.6116
+theme = ExtResource("3_r8lo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitButton"]
+position = Vector2(5.50221, 4.91268)
+scale = Vector2(0.39124, 0.39124)
+texture = ExtResource("4_5aj63")
+hframes = 18
+vframes = 3
+frame = 40
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = -51.2884
+offset_top = -12.9695
+offset_right = 108.712
+offset_bottom = 11.0305
+scale = Vector2(0.495, 0.495)
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v3dk5")
+text = "Fullscreen"
+
+[node name="ScreensOptions" type="OptionButton" parent="."]
+offset_left = -6.33146
+offset_top = 14.0051
+offset_right = 142.669
+offset_bottom = 45.0051
+scale = Vector2(0.365, 0.365)
+theme = SubResource("Theme_ro0jo")
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+
+[node name="Label" type="Label" parent="ScreensOptions"]
+layout_mode = 0
+offset_left = -70.3148
+offset_top = 7.0
+offset_right = -4.31477
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+text = "Screen"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = -5.5022
+offset_top = -0.393015
+offset_right = 143.498
+offset_bottom = 30.607
+scale = Vector2(0.365, 0.365)
+theme = SubResource("Theme_ro0jo")
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+item_count = 4
+selected = 0
+popup/item_0/text = "Default"
+popup/item_0/id = 3
+popup/item_1/text = "1080p"
+popup/item_1/id = 0
+popup/item_2/text = "720p"
+popup/item_2/id = 1
+popup/item_3/text = "480p"
+popup/item_3/id = 2
+
+[node name="Label" type="Label" parent="OptionButton"]
+layout_mode = 0
+offset_left = -114.975
+offset_top = 7.36902
+offset_right = -2.97524
+offset_bottom = 30.369
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+text = "Resolution"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -37.9259
+offset_top = 45.3932
+offset_right = 78.0741
+offset_bottom = 62.3932
+scale = Vector2(0.685, 0.685)
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+text = "RM  Studios"
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = -7.0
+offset_right = 37.0
+offset_bottom = 10.0
+scale = Vector2(0.87, 0.87)
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+text = "2
+"
+
+[node name="Label3" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.7974
+offset_top = 7.27796
+offset_right = 32.2026
+offset_bottom = 24.278
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.255, 0.255)
+theme_override_fonts/font = ExtResource("2_oagpg")
+theme_override_font_sizes/font_size = 18
+text = "2024"
+
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="ScreensOptions" to="." method="_on_screens_options_item_selected"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

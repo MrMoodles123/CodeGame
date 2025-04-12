@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=3 format=3 uid="uid://dg2cojn51poek"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://Dialogue/CustomDialogueBoxStyle/custom_dialogue_box_style.tscn" id="1_nnpkx"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_rm11g"]
+
+[resource]
+script = ExtResource("1_rm11g")
+name = "DialogueBoxStyle"
+base_scene = ExtResource("1_nnpkx")
+base_overrides = {
+"canvas_layer": "0.0",
+"global_bg_color": "Color(0, 0, 0, 0)"
+}
+layers = Array[Resource("res://addons/dialogic/Resources/dialogic_style_layer.gd")]([])
+metadata/_latest_layer = -1
